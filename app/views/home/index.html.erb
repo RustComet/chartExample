@@ -1,3 +1,7 @@
+<script type="text/javascript">
+    mixpanel.track("Landing Page Loaded")
+</script>
+
 <h3>Home</h3>
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
