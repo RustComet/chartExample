@@ -1,0 +1,32 @@
+<head>
+    <script src="Chart.js"></script>
+</head>
+
+<script type="text/javascript">
+ mixpanel.track("Landing Page Loaded")
+</script>
+
+<h1>Charts Page</h1>
+<h3>Page loads in the past week</h3>
+<canvas id="canvas" width="600" height="400"></canvas>
+
+<script>
+$.getJSON("/mixpanel", function(mixpanelData) {
+
+    var values = $.map( mixpanelData["data"]["values"]["undefined"], function( value, key ) {
+      return value;
+  }); 
+    var barChartData = {
+      labels : mixpanelData["data"]["series"],
+      datasets : [
+      {
+         fillColor : "rgba(500,100,250,0.5)",
+         strokeColor : "rgba(500,100,250,1)",
+         data : values
+     },
+     ]};
+     var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(barChartData);
+ });
+</script>
+
+
