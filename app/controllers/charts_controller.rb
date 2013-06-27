@@ -10,10 +10,10 @@ class ChartsController < ApplicationController
 
     data = client.request('events/properties', {
       event:     'Landing Page Loaded',
-      name: 'Landing Page Loaded',
+      name:      'Landing Page Loaded',
       type:      'general',
-      unit:      'day',
-      interval:   7,
+      unit:      'hour',
+      interval:   2,
       })
     render :json => data
   end
