@@ -12,8 +12,8 @@ class ChartsController < ApplicationController
       event:     'Landing Page Loaded',
       name:      'Landing Page Loaded',
       type:      'general',
-      unit:      'hour',
-      interval:   2,
+      unit:      'day',
+      interval:   7,
       })
     render :json => data
   end

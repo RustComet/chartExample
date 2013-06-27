@@ -18,12 +18,6 @@ $.getJSON("/mixpanel", function(mixpanelData) {
     return mixpanelData["data"]["values"]["undefined"][seriesLabel]; 
   })
 
-
-
-  var values = $.map( mixpanelData["data"]["values"]["undefined"], function( value, key ) {
-    return value;
-  });
-
   var keys = $.map(mixpanelData["data"]["series"], function( key ) {
     return key;
   });
